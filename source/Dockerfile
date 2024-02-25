@@ -4,8 +4,10 @@ WORKDIR /passmx
 COPY package.json .
 COPY package-lock.json .
 COPY passmx passmx
-COPY binaries binaries
 COPY .env .
+
+COPY binaries binaries
+RUN chmod -R +x binaries
 
 RUN npm install
 
